@@ -20,11 +20,14 @@ ggplot2, dplyr, pheatmap, reshape2, [org.EcK12.eg.db](http://www.bioconductor.or
 ## Input files
 
 Fastqs go in`ecoli/cdna`
+
 `metadata.tsv` in the home directory should contain two columns - samples, groups. Example included
 
 ## Outputs
 
 `outs/counts/` contains abundance estimations calculated using Kallisto
+
 `outs/plots/` contains visualizations for correlation, volcano plots and pathway enrichment
+
 `outs/objects/` contains sleuth objects that can be used in a shiny app using `sleuth::sleuth_live(obj)`, 
 differential expression tables, and normalized TPM matrices
