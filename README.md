@@ -2,14 +2,10 @@
 
 ## Dependencies
 0. python 3, R 3.4.4
-
-1. Snakemake (Install using conda)
-
+1. [Snakemake](https://snakemake.readthedocs.io/en/stable/) (Can be installed using conda)
 2. Kallisto (Quantification via pseudoalignment)
-Complete installation instructions here - https://pachterlab.github.io/kallisto/download
-
+Complete installation instructions here - https://pachterlab.github.io/kallisto/download, can also be installed using conda if the bioconda channel is active
 3. [Sleuth (R Package)](https://github.com/pachterlab/sleuth)
-
 4. Other R packages - [clusterProfiler](https://bioconductor.org/packages/release/bioc/html/clusterProfiler.html), 
 ggplot2, dplyr, pheatmap, reshape2, [org.EcK12.eg.db](http://www.bioconductor.org/packages/release/data/annotation/html/org.EcK12.eg.db.html)
 
@@ -17,20 +13,31 @@ ggplot2, dplyr, pheatmap, reshape2, [org.EcK12.eg.db](http://www.bioconductor.or
 
 `snakemake --snakefile snakefile.py`
 
+To recreate output, just install dependencies, remove the outs directory and run this command.
+
 ## Input files
 
 Fastqs go in`ecoli/cdna`
 
-`metadata.tsv` in the home directory should contain two columns - samples, groups. Example included
+`metadata.tsv` goes in the home directory and should contain two columns - samples, groups. Example included
 
 ## Outputs
 
 `outs/counts/` contains abundance estimations calculated using Kallisto
 
-`outs/plots/` contains visualizations for correlation, volcano plots and pathway enrichment
+`outs/objects/` contains a sleuth object that can be visualized in a shiny app to see QC metrics,
+differentially expressed genes, correlation heatmaps etc.
 
-`outs/objects/` contains sleuth objects that can be used in a shiny app using `sleuth::sleuth_live(obj)`, 
-differential expression tables, and normalized TPM matrices
+~~~~
+library(sleuth)
+obj = readRDS('outs/objects/sleuth.object.RDS')
+sleuth_live(obj)
+~~~~
+
+This directory also contains a normalized TPM matrix (gene expression level), and a differential expression
+output table from *sleuth*'s implementation of the Wald test.
+
+`outs/plots/` contains additional visualizations for correlation, volcano plots and pathway enrichment
 
 ## Acknowledgements
 
