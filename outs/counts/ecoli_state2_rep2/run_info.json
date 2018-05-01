@@ -1,0 +1,13 @@
+{
+	"n_targets": 4322,
+	"n_bootstraps": 100,
+	"n_processed": 10647750,
+	"n_pseudoaligned": 6887657,
+	"n_unique": 6756911,
+	"p_pseudoaligned": 64.7,
+	"p_unique": 63.5,
+	"kallisto_version": "0.44.0",
+	"index_version": 10,
+	"start_time": "Tue May  1 04:32:42 2018",
+	"call": "kallisto quant --index=reference/kallisto/ecoli_kallisto_index.fa --single --fragment-length=100 --sd=10 --threads=4 --seed=13 --output-dir=outs/counts/ecoli_state2_rep2 -b 100 ecoli_cdna/ecoli_state2_rep2.fastq.gz ecoli_cdna/ecoli_state2_rep2_2.fastq.gz"
+}

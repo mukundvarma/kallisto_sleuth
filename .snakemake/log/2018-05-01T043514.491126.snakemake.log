@@ -1,0 +1,7 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Job counts:
+	count	jobs
+	1	sleuth
+	1
+Complete log: /Users/varma/Code/Interviews/kallisto_sleuth/.snakemake/log/2018-05-01T043514.491126.snakemake.log
