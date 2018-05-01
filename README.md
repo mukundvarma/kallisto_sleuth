@@ -1,4 +1,4 @@
-
+# RNA Seq pipeline for pseudoalignment, quantification of reads and differential expression of genes
 
 ## Dependencies
 0. python 3, R 3.4.4
@@ -31,3 +31,7 @@ Fastqs go in`ecoli/cdna`
 
 `outs/objects/` contains sleuth objects that can be used in a shiny app using `sleuth::sleuth_live(obj)`, 
 differential expression tables, and normalized TPM matrices
+
+## Acknowledgements
+
+Snakemake code heavily borrowed from github.com/slowkow and github.com/saketkc
